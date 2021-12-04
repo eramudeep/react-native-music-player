@@ -14,22 +14,22 @@ import Divider from '../../components/Divider';
 import Modal from 'Components/Modal';
 import { scale } from 'react-native-size-matters';
 import Container from '../../components/Container';
+import CustomFlatList from '../../components/CustomFlatList/CustomFlatList';
 export default function Home() {
-    const [isError, setIsError] = useState({})
-    const [text, setText] = useState("hello")
-    const [isVisible, setIsVisible] = useState(false)
-    let error = useSelector(state => state.error)// getting from reducer.
-    const dispatch = useDispatch()
-    const hasError=(error)=>{
-        dispatch(setError({error}))//here we can call a action to set an error in reducer.
-    }
-    //console.log("error is =>",{isVisible});
-    useEffect(() => {
-        setIsError(error)
-    }, [error])
+
+  const _renderItems=()=>{
+    return(
+      <View>
+
+      </View>
+    )
+  }
     return (
         <Container>
-
+          <CustomFlatList
+          isHorizontal
+          data={[1,2,3,4]}
+          renderItems={_renderItems}/>
         </Container>
     )
 }

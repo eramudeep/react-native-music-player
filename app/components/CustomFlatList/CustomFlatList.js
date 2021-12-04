@@ -1,11 +1,30 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { scale } from 'react-native-size-matters'
+import { appColors } from '../../utils/appColors'
 import Label from '../Label'
 
-export default function CustomFlatList({data,renderItems,isHorizontal,}) {
+export default function CustomFlatList({ data, renderItems, isHorizontal, title, subTitle }) {
     return (
         <View>
-            <Label text={"Recently played"}/>
+            {title&&<Label text={title}
+                poppins
+                size={scale(16)}
+                bold />}
+            {subTitle&&<Label
+                text={subTitle}
+                poppins
+                size={scale(12)}
+                color={appColors.lightWhite}
+            />}
+            <FlatList
+                data={data}
+                showsHorizontalScrollIndicator={false}
+                showsVerticalScrollIndicator={false}
+                renderItem={renderItems}
+                horizontal={isHorizontal}
+                keyExtractor={(item, index) => "key" + index}
+            />
         </View>
     )
 }
