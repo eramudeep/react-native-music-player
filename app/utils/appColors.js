@@ -6,6 +6,8 @@ export const appColors={
     lightBlack:"#161A1A",
     sky:"#2DCEEF",
     blue:"#2D9BEF",
+    lightWhite:"rgba(255,255,255,0.8)",
+    whiteBackdrop:"rgba(255,255,255,0.2)"
 }
 export const shadow = {
     shadowColor: "#000",

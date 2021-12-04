@@ -15,25 +15,29 @@ import Modal from 'Components/Modal';
 import { scale } from 'react-native-size-matters';
 
 import Container from '../../components/Container';
+import CustomFlatList from '../../components/CustomFlatList/CustomFlatList';
 import CustomTab from '../../components/CustomTab';
+import MusicCard from '../../components/MusicCard/MusicCard';
 import GenerationCard from '../../components/GenerationCard';
 export default function Home() {
-    const [isError, setIsError] = useState({})
-    const [text, setText] = useState("hello")
-    const [isVisible, setIsVisible] = useState(false)
-    let error = useSelector(state => state.error)// getting from reducer.
-    const dispatch = useDispatch()
-    const hasError=(error)=>{
-        dispatch(setError({error}))//here we can call a action to set an error in reducer.
-    }
-    //console.log("error is =>",{isVisible});
-    useEffect(() => {
-        setIsError(error)
-    }, [error])
+
+  const _renderItems=()=>{
+    return(
+      <View style={{marginTop:scale(5)}}>
+        <MusicCard/>
+      </View>
+    )
+  }
     return (
         <Container>
           <GenerationCard />
-          <CustomTab />
+             {/* <CustomTab /> */}
+          <CustomFlatList
+          title={"Make satruday more productive"}
+          isHorizontal
+          data={[1,2,3,4]}
+          renderItems={_renderItems}/>
+       
 
         </Container>
     )

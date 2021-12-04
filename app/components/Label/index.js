@@ -8,22 +8,28 @@ export default function Label({ text,
     medium,
     bold,
     semiBold,
+    color,
+    size,
     poppins }) {
     return (
         <Text style={[
-            styles.label,
-            bold&&style.bold(poppins),
+            styles.label(poppins),
+            bold&&styles.bold(poppins),
             medium&&style.medium(poppins),
+            color&&{color:color},
+            size&&{fontSize:size},
             style
         ]}>{text}</Text>
     )
 }
 
 const styles = StyleSheet.create({
-    label: {
-        fontSize: scale(14),
-        color: appColors.black,
-        fontFamily: "Lato-light"
+    label: (poppins)=>{
+        return{
+            fontSize: scale(14),
+        color: appColors.white,
+        fontFamily:poppins?"Poppins-Regular": "Lato-light"
+        }
     },
     medium:(poppins)=>{
         return{
