@@ -13,8 +13,9 @@ import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import Divider from '../../components/Divider';
 import Modal from 'Components/Modal';
 import { scale } from 'react-native-size-matters';
-import CustomTab from '../../components/CustomTab';
 
+import Container from '../../components/Container';
+import CustomTab from '../../components/CustomTab';
 export default function Home() {
     const [isError, setIsError] = useState({})
     const [text, setText] = useState("hello")
@@ -29,39 +30,10 @@ export default function Home() {
         setIsError(error)
     }, [error])
     return (
-        <View style={styles.container}>
-        <View style={styles.header}>
-            <Label style={styles.headerText}
-            text={"React native starter kit with redux By `Amusoftech`"}/>
-        </View>
-        <ScrollView style={styles.scrollContainer}>
-          
-          <Label text={"What is React Native Starter?"} style={styles.TitleText}/>
-            {starterIntro.map((val,key)=>{
-                 return(
-                    <Label key={key} style={{fontSize:16,lineHeight:25,marginBottom:30 }} text={val}/>
-                 )
-             })}
-            <Label style={styles.TitleText} text={"What's inside"}/>
-             {features.map((val,key)=>{
-                 return(
-                    <Label key={key} text={`• ${val}`} style={{fontSize:18,lineHeight:36,fontWeight:"500" }}/>
-                 )
-             })}
-             <Divider isDark/>
-             <CustomInput placeholder={"enter text"} onChangeText={val=>setText(val)}/>
-             <Modal modalProps={ {isVisible:isVisible} } toggleModal={()=> setIsVisible(!isVisible)} >
-                <Label text={"Swap me down to close"} />
-             </Modal >
-             <View style={{flexDirection:'row', justifyContent:'space-evenly', alignItems:'center', paddingHorizontal:scale(20)}}>
-                <FontAwesome name="user" size={scale(30)} color={appColors.primary} />
-                <Label text={"Icon Demo"} />
-             </View>
-          <CustomButton  label={"Show Modal"} onPress={()=> setIsVisible(!isVisible)}/>
-          
-        </ScrollView>
-        <CustomTab />
-      </View>
+        <Container>
+          <CustomTab />
+
+        </Container>
     )
 }
 
