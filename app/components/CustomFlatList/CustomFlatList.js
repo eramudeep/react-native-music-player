@@ -4,7 +4,7 @@ import { scale } from 'react-native-size-matters'
 import { appColors } from '../../utils/appColors'
 import Label from '../Label'
 
-export default function CustomFlatList({ data, renderItems, isHorizontal, title, subTitle }) {
+export default function CustomFlatList({ListHeaderComponent, data, renderItems, isHorizontal, title, subTitle }) {
     return (
         <View>
             {title&&<Label text={title}
@@ -19,6 +19,7 @@ export default function CustomFlatList({ data, renderItems, isHorizontal, title,
             />}
             <FlatList
                 data={data}
+                ListHeaderComponent={ListHeaderComponent}
                 showsHorizontalScrollIndicator={false}
                 showsVerticalScrollIndicator={false}
                 renderItem={renderItems}

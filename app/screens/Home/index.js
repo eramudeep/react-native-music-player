@@ -18,6 +18,7 @@ import Container from '../../components/Container';
 import CustomFlatList from '../../components/CustomFlatList/CustomFlatList';
 import CustomTab from '../../components/CustomTab';
 import MusicCard from '../../components/MusicCard/MusicCard';
+import RoundMusicCard from '../../components/MusicCard/RoundMusicCard';
 export default function Home() {
 
   const _renderItems=()=>{
@@ -33,6 +34,7 @@ export default function Home() {
           <CustomFlatList
           title={"Make satruday more productive"}
           isHorizontal
+          ListHeaderComponent={()=>{return<RoundMusicCard/>}}
           data={[1,2,3,4]}
           renderItems={_renderItems}/>
        
