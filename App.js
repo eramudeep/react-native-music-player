@@ -19,6 +19,7 @@ import {navigationTypeTabs} from './app.json';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome'; 
 import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons'; 
 import AntDesign from 'react-native-vector-icons/dist/AntDesign'; 
+import Player from './app/components/Player';
 FontAwesome.loadFont()
 AntDesign.loadFont()
 MaterialIcons.loadFont()
@@ -29,7 +30,8 @@ const App: () => React$Node = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        {navigationTypeTabs ? <TabNavigationStack /> : <MainStack />} 
+        {/* navigationTypeTabs ? <TabNavigationStack /> : <MainStack /> */} 
+        <Player />
         <DropdownAlert
           defaultContainer={{
             padding: 8,

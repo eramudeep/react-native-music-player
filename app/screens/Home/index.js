@@ -19,7 +19,7 @@ import CustomFlatList from '../../components/CustomFlatList/CustomFlatList';
 import CustomTab from '../../components/CustomTab';
 import MusicCard from '../../components/MusicCard/MusicCard';
 import RoundMusicCard from '../../components/MusicCard/RoundMusicCard';
- 
+
 
 export default function Home() {
 
@@ -32,7 +32,7 @@ export default function Home() {
   }
     return (
         <Container>
-           
+          
              {/* <CustomTab /> */}
           <CustomFlatList
           title={"Make satruday more productive"}
