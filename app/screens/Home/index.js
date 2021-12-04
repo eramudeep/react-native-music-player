@@ -16,6 +16,7 @@ import { scale } from 'react-native-size-matters';
 
 import Container from '../../components/Container';
 import CustomTab from '../../components/CustomTab';
+import GenerationCard from '../../components/GenerationCard';
 export default function Home() {
     const [isError, setIsError] = useState({})
     const [text, setText] = useState("hello")
@@ -31,6 +32,7 @@ export default function Home() {
     }, [error])
     return (
         <Container>
+          <GenerationCard />
           <CustomTab />
 
         </Container>
