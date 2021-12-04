@@ -1,3 +1,4 @@
+export const dummyImage="https://media.istockphoto.com/photos/band-playing-their-hearts-out-at-a-festival-show-this-concert-was-picture-id502088147?k=20&m=502088147&s=612x612&w=0&h=iD-IKDoAjDXEKZgEQ6f0ynqR3SQl9UqmNjv3rnBoW4w="
 export const features = [
     "Always up-to-date React Native scaffolding",
     "Modular and well-documented structure for application code",

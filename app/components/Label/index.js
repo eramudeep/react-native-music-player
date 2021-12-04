@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         return{
             fontSize: scale(14),
         color: appColors.white,
-        fontFamily:poppins?"Poppins-Light": "Lato-light"
+        fontFamily:poppins?"Poppins-Regular": "Lato-light"
         }
     },
     medium:(poppins)=>{

@@ -13,23 +13,30 @@ import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import Divider from '../../components/Divider';
 import Modal from 'Components/Modal';
 import { scale } from 'react-native-size-matters';
+
 import Container from '../../components/Container';
 import CustomFlatList from '../../components/CustomFlatList/CustomFlatList';
+import CustomTab from '../../components/CustomTab';
+import MusicCard from '../../components/MusicCard/MusicCard';
 export default function Home() {
 
   const _renderItems=()=>{
     return(
-      <View>
-
+      <View style={{marginTop:scale(5)}}>
+        <MusicCard/>
       </View>
     )
   }
     return (
         <Container>
+             {/* <CustomTab /> */}
           <CustomFlatList
+          title={"Make satruday more productive"}
           isHorizontal
           data={[1,2,3,4]}
           renderItems={_renderItems}/>
+       
+
         </Container>
     )
 }
